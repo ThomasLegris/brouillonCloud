@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  
+  
+  body
+    header
+      h1 #{title}
+    form(method='POST')
+      h2 Add an image
+      div
+        label(for="file") Select an image to upload : 
+        input(type="file" accept="image/*,.pdf" id="file")
+      div
+        label(for="name") Enter a pic name : 
+        input(type="text", placeholder="name" name="name")
+      div
+        label(for="idAlbum") Enter an album Id : 
+        input(type="text", placeholder="idAlbum" name="idAlbum")
+      div
+        button(type="submit") Upload
+
+    
+
+    each album in data
+      h2 #{album.name}
+      a(href="/images/"+album.idAlbum role="button")
+        img(src=album.front_image alt=album.idAlbum)
+                

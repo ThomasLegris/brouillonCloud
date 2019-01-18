@@ -1,0 +1,17 @@
+extends layout
+
+block content
+      div(id="carouselExampleIndicators" class="carousel slide" data-ride="carousel")
+
+        a(class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev")
+          span(class='carousel-control-prev-icon' aria-hidden='true')
+          span(class='sr-only') Previous
+        a(class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next")
+          span(class='carousel-control-next-icon' aria-hidden='true')
+          span(class='sr-only') Next
+
+        div(class="carousel-inner")
+          each images in data
+            if images.idAlbum==idFolder
+              div(class="carousel-item-active")
+                img(class="d-block w-50" src=images.src)
